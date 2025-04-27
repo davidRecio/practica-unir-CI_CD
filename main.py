@@ -1,6 +1,7 @@
 """
 License: Apache
 Organization: UNIR
+Asignature:Gestion de proyectos
 """
 
 import os
@@ -12,7 +13,7 @@ DEFAULT_ASCENDING = True
 
 def sort_list(items, ascending=True):
     if not isinstance(items, list):
-        raise RuntimeError(f"No puede ordenar {type(items)}")
+        raise RuntimeError(f"Cannot order {type(items)}")
 
     return sorted(items, reverse=(not ascending))
 
@@ -30,9 +31,11 @@ if __name__ == "__main__":
         ascending = sys.argv[3].lower() == "asc"
     else:
         print("Uso: python script.py <fichero> <eliminar_duplicados: yes/no> <orden: asc/desc>")
+        print("You must pass the file as the first parameter")
+        print("The second parameter indicates if you want to remove duplicates")
         sys.exit(1)
 
-    print(f"Se leerán las palabras del fichero {filename}")
+    print(f"Will read the words from {filename}")
     file_path = os.path.join(".", filename)
     if os.path.isfile(file_path):
         word_list = []
@@ -40,7 +43,7 @@ if __name__ == "__main__":
             for line in file:
                 word_list.append(line.strip())
     else:
-        print(f"El fichero {filename} no existe")
+        print(f"Filename {filename} doesn't exist")
         word_list = ["ravenclaw", "gryffindor", "slytherin", "hufflepuff"]
 
     if remove_duplicates:
