@@ -32,7 +32,7 @@ if __name__ == "__main__":
         remove_duplicates = sys.argv[2].lower() == "yes"
         ascending = sys.argv[3].lower() == "asc"
     else:
-        print("Uso: python script.py <fichero> <eliminar_duplicados: yes/no> <orden: asc/desc>")
+        print("Usage: python script.py <file> <remove_duplicates: yes/no> <order: asc/desc>")
         print("You must pass the file as the first parameter")
         print("The second parameter indicates if you want to remove duplicates ('yes' or 'no')")
         sys.exit(1)
